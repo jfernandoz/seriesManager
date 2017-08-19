@@ -10,4 +10,6 @@ import Foundation
 
 protocol APIDelegate: class {
     func didReturnShow(show: ShowModel)
+    func didReturnSeason(season: SeasonModel)
+    func didReturnEpisode(episode: EpisodeModel)
 }

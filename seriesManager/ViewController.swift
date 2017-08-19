@@ -17,6 +17,9 @@ class ViewController: UIViewController {
         let api = APIManager()
         api.delegate = self
         api.getShow(withSeriesName: "Game of Thrones")
+        api.getSeason(withSeriesName: "Game of Thrones", seasonNumber: 1)
+        api.getEpisode(withSeriesName: "Game of Thrones", seasonNumber: 1, episodeNumber: 1)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,9 +30,20 @@ class ViewController: UIViewController {
 
 }
 
+//MARK: API Delegate Functions
+
 extension ViewController: APIDelegate{
 
     func didReturnShow(show: ShowModel){
         print(show.title ?? "No show")
     }
+    
+    func didReturnSeason(season: SeasonModel){
+        print(season.season ?? "0")
+    }
+    
+    func didReturnEpisode(episode: EpisodeModel){
+        print(episode.title ?? "No episode")
+    }
+    
 }

@@ -17,19 +17,50 @@ class APIManager{
             NSLog("Error building url")
             return
         }
-        get(url: url, model: "Show")
+        get(url: url, model: APISettings.model.show)
+    }
+    
+    func getSeason(withSeriesName: String, seasonNumber: Int){
+        guard let url = buildURLWith(seriesName: withSeriesName, seasonNumber: seasonNumber) else{
+            NSLog("Error building url")
+            return
+        }
+        get(url: url, model: APISettings.model.season)
+    }
+    
+    func getEpisode(withSeriesName: String, seasonNumber: Int, episodeNumber: Int){
+        guard let url = buildURLWith(seriesName: withSeriesName, seasonNumber: seasonNumber, episodeNumber: episodeNumber) else{
+            NSLog("Error building url")
+            return
+        }
+        get(url: url, model: APISettings.model.episode)
     }
     
     func buildURLWith(seriesName: String) -> URL?{
+        return buildURLWith(seriesName: seriesName, seasonNumber: nil, episodeNumber: nil)
+    }
+    
+    func buildURLWith(seriesName: String, seasonNumber: Int?) -> URL?{
+        return buildURLWith(seriesName: seriesName, seasonNumber: seasonNumber, episodeNumber: nil)
+    }
+    
+    func buildURLWith(seriesName: String, seasonNumber: Int?, episodeNumber: Int?) -> URL?{
         let seriesName = seriesName.replacingOccurrences(of: " ", with: "%20")
-        let stringUrl = "\(APISettings.urlRequest)\(APISettings.apiKey)\(APISettings.title)\(seriesName)"
+        var stringUrl = "\(APISettings.urlRequest)\(APISettings.apiKey)\(APISettings.titleEquals)\(seriesName)"
+        if let seasonNumber = seasonNumber{
+            stringUrl.append("\(APISettings.appender)\(APISettings.seasonEquals)\(seasonNumber)")
+            if let episodeNumber = episodeNumber{
+                stringUrl.append("\(APISettings.appender)\(APISettings.episodeEquals)\(episodeNumber)")
+            }
+        }
+        
         if let result = URL(string: stringUrl){
             return result
         }
         return nil
     }
     
-    func get(url: URL, model: String){
+    func get(url: URL, model: APISettings.model){
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard error == nil else{
                 NSLog("Error description: ", error.debugDescription)
@@ -40,45 +71,50 @@ class APIManager{
                     NSLog("No JSON retrieved")
                     return
                 }
-                
                 DispatchQueue.main.async {
                     guard let parsed = self.parse(json: json, model: model) else{
                         return
                     }
                     self.callDelegate(parsed: parsed, model: model)
                 }
-                
             }catch{
                 NSLog("Error during parsing: ")
             }
-            
         }
         
         task.resume()
         
     }
     
-    func parse(json: [String: Any], model: String) -> AnyObject?{
+    func parse(json: [String: Any], model: APISettings.model) -> AnyObject?{
+        var parsed:AnyObject? = nil
         switch model {
-        case "Show":
-            let parsed = ShowModel.Parse(jsonShow: json)
-            return parsed
-        default:
-            return nil
+        case .show:
+            parsed = ShowModel.Parse(jsonShow: json)
+        case .season:
+            parsed = SeasonModel.Parse(jsonSeason: json)
+        case .episode:
+            parsed = EpisodeModel.Parse(jsonEpisode: json)
         }
+        return parsed
     }
     
-    func callDelegate(parsed: Any, model: String){
+    func callDelegate(parsed: Any, model: APISettings.model){
         switch model {
-        case "Show":
+        case .show:
             if let modelParsed = parsed as? ShowModel{
                 self.delegate?.didReturnShow(show: modelParsed)
             }
-            return
-        default:
-            return
+        case .season:
+            if let modelParsed = parsed as? SeasonModel{
+                self.delegate?.didReturnSeason(season: modelParsed)
+            }
+        case .episode:
+            if let modelParsed = parsed as? EpisodeModel{
+                self.delegate?.didReturnEpisode(episode: modelParsed)
+            }
         }
-
+        return
     }
     
 

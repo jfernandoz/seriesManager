@@ -19,7 +19,6 @@ class ShowModel {
     var poster: String?
     var imdbRating: Double?
     var totalSeasons: Int?
-
     
     init() {
         

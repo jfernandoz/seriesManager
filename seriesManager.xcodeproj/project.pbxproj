@@ -15,11 +15,13 @@
 		040B70771F47C31C0070412C /* ShowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040B706D1F47C31C0070412C /* ShowModel.swift */; };
 		040B70781F47C31C0070412C /* ShowModel+Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040B706E1F47C31C0070412C /* ShowModel+Parse.swift */; };
 		040B707F1F47C41F0070412C /* apiManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040B707E1F47C41F0070412C /* apiManagerTests.swift */; };
+		040B70811F48A39B0070412C /* SeasonModel+Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040B70801F48A39B0070412C /* SeasonModel+Parse.swift */; };
 		04C175031F472E3E00FE5691 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C175021F472E3E00FE5691 /* AppDelegate.swift */; };
 		04C175051F472E3E00FE5691 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C175041F472E3E00FE5691 /* ViewController.swift */; };
 		04C175081F472E3E00FE5691 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C175061F472E3E00FE5691 /* Main.storyboard */; };
 		04C1750A1F472E3E00FE5691 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C175091F472E3E00FE5691 /* Assets.xcassets */; };
 		04C1750D1F472E3E00FE5691 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C1750B1F472E3E00FE5691 /* LaunchScreen.storyboard */; };
+		04C931FA1F48FC1F0047A6D8 /* EpisodeModel+Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C931F91F48FC1F0047A6D8 /* EpisodeModel+Parse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,7 @@
 		040B706D1F47C31C0070412C /* ShowModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowModel.swift; path = seriesManager/ShowModel.swift; sourceTree = "<group>"; };
 		040B706E1F47C31C0070412C /* ShowModel+Parse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ShowModel+Parse.swift"; sourceTree = "<group>"; };
 		040B707E1F47C41F0070412C /* apiManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = apiManagerTests.swift; sourceTree = "<group>"; };
+		040B70801F48A39B0070412C /* SeasonModel+Parse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SeasonModel+Parse.swift"; sourceTree = "<group>"; };
 		04C174FF1F472E3E00FE5691 /* seriesManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = seriesManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C175021F472E3E00FE5691 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04C175041F472E3E00FE5691 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +53,7 @@
 		04C1750E1F472E3E00FE5691 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04C175131F472E3F00FE5691 /* seriesManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = seriesManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C175191F472E3F00FE5691 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04C931F91F48FC1F0047A6D8 /* EpisodeModel+Parse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EpisodeModel+Parse.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,8 @@
 				040B70671F47C31C0070412C /* APISettings.swift */,
 				040B70661F47C31C0070412C /* APIManager.swift */,
 				040B706E1F47C31C0070412C /* ShowModel+Parse.swift */,
+				040B70801F48A39B0070412C /* SeasonModel+Parse.swift */,
+				04C931F91F48FC1F0047A6D8 /* EpisodeModel+Parse.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -264,10 +270,12 @@
 			files = (
 				040B70701F47C31C0070412C /* APIManager.swift in Sources */,
 				040B70711F47C31C0070412C /* APISettings.swift in Sources */,
+				040B70811F48A39B0070412C /* SeasonModel+Parse.swift in Sources */,
 				04C175051F472E3E00FE5691 /* ViewController.swift in Sources */,
 				04C175031F472E3E00FE5691 /* AppDelegate.swift in Sources */,
 				040B70751F47C31C0070412C /* SeasonModel.swift in Sources */,
 				040B70771F47C31C0070412C /* ShowModel.swift in Sources */,
+				04C931FA1F48FC1F0047A6D8 /* EpisodeModel+Parse.swift in Sources */,
 				040B706F1F47C31C0070412C /* APIDelegate.swift in Sources */,
 				040B70781F47C31C0070412C /* ShowModel+Parse.swift in Sources */,
 				040B70721F47C31C0070412C /* EpisodeModel.swift in Sources */,

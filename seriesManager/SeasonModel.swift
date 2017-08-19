@@ -11,13 +11,13 @@ import Foundation
 class SeasonModel{
     
     var season: Int?
-    var episodes: [String: String]?
+    var episodes: [[String: String]]?
     
     init() {
     
     }
     
-    init(season: Int, episodes: [String:String]){
+    init(season: Int, episodes: [[String:String]]){
         self.season = season
         self.episodes = episodes
     }
