@@ -16,6 +16,7 @@
 		040B70781F47C31C0070412C /* ShowModel+Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040B706E1F47C31C0070412C /* ShowModel+Parse.swift */; };
 		040B707F1F47C41F0070412C /* apiManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040B707E1F47C41F0070412C /* apiManagerTests.swift */; };
 		040B70811F48A39B0070412C /* SeasonModel+Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040B70801F48A39B0070412C /* SeasonModel+Parse.swift */; };
+		04B2AADE1F4947E9000054E2 /* seriesManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04B2AADC1F4947E9000054E2 /* seriesManager.xcdatamodeld */; };
 		04C175031F472E3E00FE5691 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C175021F472E3E00FE5691 /* AppDelegate.swift */; };
 		04C175051F472E3E00FE5691 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C175041F472E3E00FE5691 /* ViewController.swift */; };
 		04C175081F472E3E00FE5691 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C175061F472E3E00FE5691 /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		040B706E1F47C31C0070412C /* ShowModel+Parse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ShowModel+Parse.swift"; sourceTree = "<group>"; };
 		040B707E1F47C41F0070412C /* apiManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = apiManagerTests.swift; sourceTree = "<group>"; };
 		040B70801F48A39B0070412C /* SeasonModel+Parse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SeasonModel+Parse.swift"; sourceTree = "<group>"; };
+		04B2AADD1F4947E9000054E2 /* seriesManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = seriesManager.xcdatamodel; sourceTree = "<group>"; };
 		04C174FF1F472E3E00FE5691 /* seriesManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = seriesManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C175021F472E3E00FE5691 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04C175041F472E3E00FE5691 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				04C175011F472E3E00FE5691 /* seriesManager */,
+				04B2AADC1F4947E9000054E2 /* seriesManager.xcdatamodeld */,
 				04C175161F472E3F00FE5691 /* seriesManagerTests */,
 				04C175001F472E3E00FE5691 /* Products */,
 			);
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				040B70701F47C31C0070412C /* APIManager.swift in Sources */,
+				04B2AADE1F4947E9000054E2 /* seriesManager.xcdatamodeld in Sources */,
 				040B70711F47C31C0070412C /* APISettings.swift in Sources */,
 				040B70811F48A39B0070412C /* SeasonModel+Parse.swift in Sources */,
 				04C175051F472E3E00FE5691 /* ViewController.swift in Sources */,
@@ -496,6 +500,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		04B2AADC1F4947E9000054E2 /* seriesManager.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				04B2AADD1F4947E9000054E2 /* seriesManager.xcdatamodel */,
+			);
+			currentVersion = 04B2AADD1F4947E9000054E2 /* seriesManager.xcdatamodel */;
+			name = seriesManager.xcdatamodeld;
+			path = seriesManager/seriesManager.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 04C174F71F472E3E00FE5691 /* Project object */;
 }
