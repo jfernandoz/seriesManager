@@ -16,9 +16,19 @@
 		040B70781F47C31C0070412C /* ShowModel+Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040B706E1F47C31C0070412C /* ShowModel+Parse.swift */; };
 		040B707F1F47C41F0070412C /* apiManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040B707E1F47C41F0070412C /* apiManagerTests.swift */; };
 		040B70811F48A39B0070412C /* SeasonModel+Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040B70801F48A39B0070412C /* SeasonModel+Parse.swift */; };
+		047975271F4A740D003EE7A8 /* URLSession+DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047975261F4A740D003EE7A8 /* URLSession+DownloadImage.swift */; };
+		0479752B1F4A8958003EE7A8 /* SeasonCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0479752A1F4A8958003EE7A8 /* SeasonCellDelegate.swift */; };
+		0479752D1F4AA98A003EE7A8 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0479752C1F4AA98A003EE7A8 /* FavoritesViewController.swift */; };
+		0479752F1F4AA9A5003EE7A8 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0479752E1F4AA9A5003EE7A8 /* FavoriteCell.swift */; };
+		047975311F4ABC84003EE7A8 /* FavoriteCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047975301F4ABC84003EE7A8 /* FavoriteCellDelegate.swift */; };
 		04B2AADE1F4947E9000054E2 /* seriesManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04B2AADC1F4947E9000054E2 /* seriesManager.xcdatamodeld */; };
+		04B2AAE01F494BE6000054E2 /* DataPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2AADF1F494BE6000054E2 /* DataPersistenceManager.swift */; };
+		04B2AAE41F4A1A9B000054E2 /* EpisodeModel+DataPersistenceKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2AAE31F4A1A9B000054E2 /* EpisodeModel+DataPersistenceKeys.swift */; };
+		04B2AAE81F4A3D9C000054E2 /* SeasonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2AAE71F4A3D9C000054E2 /* SeasonCell.swift */; };
+		04B2AAEC1F4A40AE000054E2 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2AAEB1F4A40AE000054E2 /* TabBarViewController.swift */; };
+		04B2AAEE1F4A414E000054E2 /* SeasonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2AAED1F4A414E000054E2 /* SeasonViewController.swift */; };
+		04B2AAF21F4A605F000054E2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B2AAF11F4A605F000054E2 /* DetailViewController.swift */; };
 		04C175031F472E3E00FE5691 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C175021F472E3E00FE5691 /* AppDelegate.swift */; };
-		04C175051F472E3E00FE5691 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C175041F472E3E00FE5691 /* ViewController.swift */; };
 		04C175081F472E3E00FE5691 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C175061F472E3E00FE5691 /* Main.storyboard */; };
 		04C1750A1F472E3E00FE5691 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04C175091F472E3E00FE5691 /* Assets.xcassets */; };
 		04C1750D1F472E3E00FE5691 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04C1750B1F472E3E00FE5691 /* LaunchScreen.storyboard */; };
@@ -45,10 +55,20 @@
 		040B706E1F47C31C0070412C /* ShowModel+Parse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ShowModel+Parse.swift"; sourceTree = "<group>"; };
 		040B707E1F47C41F0070412C /* apiManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = apiManagerTests.swift; sourceTree = "<group>"; };
 		040B70801F48A39B0070412C /* SeasonModel+Parse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SeasonModel+Parse.swift"; sourceTree = "<group>"; };
+		047975261F4A740D003EE7A8 /* URLSession+DownloadImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLSession+DownloadImage.swift"; sourceTree = "<group>"; };
+		0479752A1F4A8958003EE7A8 /* SeasonCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonCellDelegate.swift; sourceTree = "<group>"; };
+		0479752C1F4AA98A003EE7A8 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		0479752E1F4AA9A5003EE7A8 /* FavoriteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
+		047975301F4ABC84003EE7A8 /* FavoriteCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteCellDelegate.swift; sourceTree = "<group>"; };
 		04B2AADD1F4947E9000054E2 /* seriesManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = seriesManager.xcdatamodel; sourceTree = "<group>"; };
+		04B2AADF1F494BE6000054E2 /* DataPersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPersistenceManager.swift; sourceTree = "<group>"; };
+		04B2AAE31F4A1A9B000054E2 /* EpisodeModel+DataPersistenceKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EpisodeModel+DataPersistenceKeys.swift"; sourceTree = "<group>"; };
+		04B2AAE71F4A3D9C000054E2 /* SeasonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonCell.swift; sourceTree = "<group>"; };
+		04B2AAEB1F4A40AE000054E2 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		04B2AAED1F4A414E000054E2 /* SeasonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonViewController.swift; sourceTree = "<group>"; };
+		04B2AAF11F4A605F000054E2 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		04C174FF1F472E3E00FE5691 /* seriesManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = seriesManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C175021F472E3E00FE5691 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		04C175041F472E3E00FE5691 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		04C175071F472E3E00FE5691 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04C175091F472E3E00FE5691 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04C1750C1F472E3E00FE5691 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -79,7 +99,12 @@
 		040B70791F47C3270070412C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				04C175041F472E3E00FE5691 /* ViewController.swift */,
+				04B2AAE71F4A3D9C000054E2 /* SeasonCell.swift */,
+				04B2AAEB1F4A40AE000054E2 /* TabBarViewController.swift */,
+				04B2AAED1F4A414E000054E2 /* SeasonViewController.swift */,
+				04B2AAF11F4A605F000054E2 /* DetailViewController.swift */,
+				0479752C1F4AA98A003EE7A8 /* FavoritesViewController.swift */,
+				0479752E1F4AA9A5003EE7A8 /* FavoriteCell.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -92,6 +117,9 @@
 				040B706E1F47C31C0070412C /* ShowModel+Parse.swift */,
 				040B70801F48A39B0070412C /* SeasonModel+Parse.swift */,
 				04C931F91F48FC1F0047A6D8 /* EpisodeModel+Parse.swift */,
+				04B2AADF1F494BE6000054E2 /* DataPersistenceManager.swift */,
+				04B2AAE31F4A1A9B000054E2 /* EpisodeModel+DataPersistenceKeys.swift */,
+				047975261F4A740D003EE7A8 /* URLSession+DownloadImage.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -111,6 +139,8 @@
 			isa = PBXGroup;
 			children = (
 				040B70651F47C31C0070412C /* APIDelegate.swift */,
+				0479752A1F4A8958003EE7A8 /* SeasonCellDelegate.swift */,
+				047975301F4ABC84003EE7A8 /* FavoriteCellDelegate.swift */,
 			);
 			name = Protocols;
 			path = ..;
@@ -271,18 +301,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				047975311F4ABC84003EE7A8 /* FavoriteCellDelegate.swift in Sources */,
 				040B70701F47C31C0070412C /* APIManager.swift in Sources */,
 				04B2AADE1F4947E9000054E2 /* seriesManager.xcdatamodeld in Sources */,
 				040B70711F47C31C0070412C /* APISettings.swift in Sources */,
 				040B70811F48A39B0070412C /* SeasonModel+Parse.swift in Sources */,
-				04C175051F472E3E00FE5691 /* ViewController.swift in Sources */,
 				04C175031F472E3E00FE5691 /* AppDelegate.swift in Sources */,
 				040B70751F47C31C0070412C /* SeasonModel.swift in Sources */,
+				04B2AAE81F4A3D9C000054E2 /* SeasonCell.swift in Sources */,
 				040B70771F47C31C0070412C /* ShowModel.swift in Sources */,
+				04B2AAF21F4A605F000054E2 /* DetailViewController.swift in Sources */,
+				0479752F1F4AA9A5003EE7A8 /* FavoriteCell.swift in Sources */,
+				04B2AAEC1F4A40AE000054E2 /* TabBarViewController.swift in Sources */,
+				0479752B1F4A8958003EE7A8 /* SeasonCellDelegate.swift in Sources */,
 				04C931FA1F48FC1F0047A6D8 /* EpisodeModel+Parse.swift in Sources */,
 				040B706F1F47C31C0070412C /* APIDelegate.swift in Sources */,
+				04B2AAE01F494BE6000054E2 /* DataPersistenceManager.swift in Sources */,
+				047975271F4A740D003EE7A8 /* URLSession+DownloadImage.swift in Sources */,
+				04B2AAE41F4A1A9B000054E2 /* EpisodeModel+DataPersistenceKeys.swift in Sources */,
 				040B70781F47C31C0070412C /* ShowModel+Parse.swift in Sources */,
 				040B70721F47C31C0070412C /* EpisodeModel.swift in Sources */,
+				0479752D1F4AA98A003EE7A8 /* FavoritesViewController.swift in Sources */,
+				04B2AAEE1F4A414E000054E2 /* SeasonViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

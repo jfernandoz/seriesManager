@@ -13,18 +13,18 @@ extension EpisodeModel{
     static func Parse(jsonEpisode: [String: Any]) -> EpisodeModel {
         let result = EpisodeModel()
         
-        if let releasedDate = jsonEpisode[APISettings.releasedKey] as? String{
+        if let releasedDate = jsonEpisode[APISettings.releasedKey] as? String {
             let df = DateFormatter()
             df.dateFormat = APISettings.dateAPIFormat
             result.released = df.date(from: releasedDate)
         }
-        if let season = jsonEpisode[APISettings.seasonNumKey] as? String{
+        if let season = jsonEpisode[APISettings.seasonNumKey] as? String {
             result.season = Int(season)
         }
-        if let episode = jsonEpisode[APISettings.episodeKey] as? String{
+        if let episode = jsonEpisode[APISettings.episodeKey] as? String {
             result.episode = Int(episode)
         }
-        if let rating = jsonEpisode[APISettings.imdbRatingKey] as? String{
+        if let rating = jsonEpisode[APISettings.imdbRatingKey] as? String {
             result.imdbrating = Double(rating)
         }
         result.title = jsonEpisode[APISettings.titleKey] as? String
@@ -37,6 +37,9 @@ extension EpisodeModel{
         result.country = jsonEpisode[APISettings.countryKey] as? String
         result.awards = jsonEpisode[APISettings.awardsKey] as? String
         result.poster = jsonEpisode[APISettings.posterKey] as? String
+        result.seriesId = jsonEpisode[APISettings.seriesId] as? String
+        result.episodeId = jsonEpisode[APISettings.id] as? String
+        
         return result
     }
     

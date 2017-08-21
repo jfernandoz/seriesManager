@@ -14,6 +14,7 @@ struct APISettings{
     static let urlRequest = "https://www.omdbapi.com/"
     static let apiKey = "?apikey=6bfb4e66&"
     static let titleEquals = "t="
+    static let itemEquals = "i="
     static let seasonEquals = "season="
     static let episodeEquals = "episode="
     static let appender = "&"
@@ -38,6 +39,8 @@ struct APISettings{
     static let languageKey = "Language"
     static let countryKey = "Country"
     static let awardsKey = "Awards"
+    static let seriesId = "seriesID"
+    static let id = "imdbID"
     
     enum model {
         case show

@@ -12,7 +12,7 @@ class APIManager{
     
     weak var delegate:APIDelegate?
     
-    func getShow(withSeriesName: String){
+    func getShow(withSeriesName: String) {
         guard let url = buildURLWith(seriesName: withSeriesName) else{
             NSLog("Error building url")
             return
@@ -20,7 +20,7 @@ class APIManager{
         get(url: url, model: APISettings.model.show)
     }
     
-    func getSeason(withSeriesName: String, seasonNumber: Int){
+    func getSeason(withSeriesName: String, seasonNumber: Int) {
         guard let url = buildURLWith(seriesName: withSeriesName, seasonNumber: seasonNumber) else{
             NSLog("Error building url")
             return
@@ -28,7 +28,7 @@ class APIManager{
         get(url: url, model: APISettings.model.season)
     }
     
-    func getEpisode(withSeriesName: String, seasonNumber: Int, episodeNumber: Int){
+    func getEpisode(withSeriesName: String, seasonNumber: Int, episodeNumber: Int) {
         guard let url = buildURLWith(seriesName: withSeriesName, seasonNumber: seasonNumber, episodeNumber: episodeNumber) else{
             NSLog("Error building url")
             return
@@ -36,15 +36,31 @@ class APIManager{
         get(url: url, model: APISettings.model.episode)
     }
     
-    func buildURLWith(seriesName: String) -> URL?{
+    func getEpisode(withId: String) {
+        guard let url = buildURL(withId: withId) else{
+            NSLog("Error building url")
+            return
+        }
+        get(url: url, model: APISettings.model.episode)
+    }
+    
+    func buildURL(withId: String) -> URL? {
+        let stringUrl = "\(APISettings.urlRequest)\(APISettings.apiKey)\(APISettings.itemEquals)\(withId)"
+        if let result = URL(string: stringUrl) {
+            return result
+        }
+        return nil
+    }
+    
+    func buildURLWith(seriesName: String) -> URL? {
         return buildURLWith(seriesName: seriesName, seasonNumber: nil, episodeNumber: nil)
     }
     
-    func buildURLWith(seriesName: String, seasonNumber: Int?) -> URL?{
+    func buildURLWith(seriesName: String, seasonNumber: Int?) -> URL? {
         return buildURLWith(seriesName: seriesName, seasonNumber: seasonNumber, episodeNumber: nil)
     }
     
-    func buildURLWith(seriesName: String, seasonNumber: Int?, episodeNumber: Int?) -> URL?{
+    func buildURLWith(seriesName: String, seasonNumber: Int?, episodeNumber: Int?) -> URL? {
         let seriesName = seriesName.replacingOccurrences(of: " ", with: "%20")
         var stringUrl = "\(APISettings.urlRequest)\(APISettings.apiKey)\(APISettings.titleEquals)\(seriesName)"
         if let seasonNumber = seasonNumber{
@@ -54,13 +70,13 @@ class APIManager{
             }
         }
         
-        if let result = URL(string: stringUrl){
+        if let result = URL(string: stringUrl) {
             return result
         }
         return nil
     }
     
-    func get(url: URL, model: APISettings.model){
+    func get(url: URL, model: APISettings.model) {
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard error == nil else{
                 NSLog("Error description: ", error.debugDescription)
@@ -77,7 +93,7 @@ class APIManager{
                     }
                     self.callDelegate(parsed: parsed, model: model)
                 }
-            }catch{
+            }catch {
                 NSLog("Error during parsing: ")
             }
         }
@@ -86,7 +102,7 @@ class APIManager{
         
     }
     
-    func parse(json: [String: Any], model: APISettings.model) -> AnyObject?{
+    func parse(json: [String: Any], model: APISettings.model) -> AnyObject? {
         var parsed:AnyObject? = nil
         switch model {
         case .show:
@@ -99,18 +115,18 @@ class APIManager{
         return parsed
     }
     
-    func callDelegate(parsed: Any, model: APISettings.model){
+    func callDelegate(parsed: Any, model: APISettings.model) {
         switch model {
         case .show:
-            if let modelParsed = parsed as? ShowModel{
+            if let modelParsed = parsed as? ShowModel {
                 self.delegate?.didReturnShow(show: modelParsed)
             }
         case .season:
-            if let modelParsed = parsed as? SeasonModel{
+            if let modelParsed = parsed as? SeasonModel {
                 self.delegate?.didReturnSeason(season: modelParsed)
             }
         case .episode:
-            if let modelParsed = parsed as? EpisodeModel{
+            if let modelParsed = parsed as? EpisodeModel {
                 self.delegate?.didReturnEpisode(episode: modelParsed)
             }
         }

@@ -66,6 +66,12 @@ class apiManagerTests: XCTestCase {
         let df = DateFormatter()
         df.dateFormat = APISettings.dateAPIFormat
         
-        XCTAssert(result.title == "Winter Is Coming" && result.rated == "TV-MA" && result.released == df.date(from: "17 Apr 2011") && result.season == 1 && result.episode == 1 && result.director == "Timothy Van Patten" && result.writer == "David Benioff (created by), D.B. Weiss (created by), George R.R. Martin (based on \"A Song of Ice and Fire\" by), David Benioff, D.B. Weiss" && result.actors == "Sean Bean, Mark Addy, Nikolaj Coster-Waldau, Michelle Fairley" && result.plot == "Jon Arryn, the Hand of the King, is dead. King Robert Baratheon plans to ask his oldest friend, Eddard Stark, to take Jon's place. Across the sea, Viserys Targaryen plans to wed his sister to a nomadic warlord in exchange for an army." && result.language == "English" && result.country == "USA" && result.awards == "N/A" && result.poster == "https://images-na.ssl-images-amazon.com/images/M/MV5BMTk5MDU3OTkzMF5BMl5BanBnXkFtZTcwOTc0ODg5NA@@._V1_SX300.jpg" && result.imdbrating == 9.0, "Parsing failed")
+        XCTAssert(result.title == "Winter Is Coming" && result.rated == "TV-MA" && result.released == df.date(from: "17 Apr 2011") && result.season == 1 && result.episode == 1 && result.director == "Timothy Van Patten" && result.writer == "David Benioff (created by), D.B. Weiss (created by), George R.R. Martin (based on \"A Song of Ice and Fire\" by), David Benioff, D.B. Weiss" && result.actors == "Sean Bean, Mark Addy, Nikolaj Coster-Waldau, Michelle Fairley" && result.plot == "Jon Arryn, the Hand of the King, is dead. King Robert Baratheon plans to ask his oldest friend, Eddard Stark, to take Jon's place. Across the sea, Viserys Targaryen plans to wed his sister to a nomadic warlord in exchange for an army." && result.language == "English" && result.country == "USA" && result.awards == "N/A" && result.poster == "https://images-na.ssl-images-amazon.com/images/M/MV5BMTk5MDU3OTkzMF5BMl5BanBnXkFtZTcwOTc0ODg5NA@@._V1_SX300.jpg" && result.imdbrating == 9.0 && result.seriesId == "tt0944947" && result.episodeId == "tt1480055", "Parsing failed")
+    }
+    
+    func testBuildUrlWithId(){
+        let result = api.buildURL(withId: "tt1851398")?.absoluteString ?? ""
+        XCTAssert(result == "https://www.omdbapi.com/?apikey=6bfb4e66&i=tt1851398", "Failed to build season URL")
+        
     }
 }

@@ -24,12 +24,14 @@ class EpisodeModel{
     var awards: String?
     var poster: String?
     var imdbrating: Double?
+    var seriesId: String?
+    var episodeId: String?
     
     init(){
         
     }
     
-    init(title: String, rated: String, released: Date, season: Int, director: String, writer: String, actors: String, plot: String, language: String, country: String, awards: String, poster: String, imdbrating: Double){
+    init(title: String, rated: String, released: Date, season: Int, director: String, writer: String, actors: String, plot: String, language: String, country: String, awards: String, poster: String, imdbrating: Double, seriesId: String, episodeId: String){
         
         self.title = title
         self.rated = rated
@@ -44,6 +46,8 @@ class EpisodeModel{
         self.awards = awards
         self.poster = poster
         self.imdbrating = imdbrating
+        self.seriesId = seriesId
+        self.episodeId = episodeId
         
     }
     
