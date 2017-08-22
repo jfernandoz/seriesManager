@@ -23,9 +23,9 @@ class SeasonViewController: UITableViewController {
         super.viewDidLoad()
         api.delegate = self
         api.getShow(withSeriesName: seriesName)
-    }
+    } 
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         episodePersistence = dp.getEpisodes()
         tableView.reloadData()
     }
@@ -63,6 +63,11 @@ class SeasonViewController: UITableViewController {
             cell.favoriteBtn.isSelected = true
         } else {
             cell.favoriteBtn.isSelected = false
+        }
+        if indexPath.row % 2 == 0 {
+            cell.backgroundColor = UIColor.lightGray
+        } else {
+            cell.backgroundColor = UIColor.white
         }
         return cell
     }

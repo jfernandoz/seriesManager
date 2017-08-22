@@ -22,19 +22,21 @@ class FavoritesViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        api.delegate = self
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         episodes.removeAll()
-        api.delegate = self
         episodePersistence = dp.getEpisodes()
-        for item in episodePersistence {
-            api.getEpisode(withId: item)
+        if(episodePersistence.count == 0){
+            tableView.reloadData()
+        }else{
+            for item in episodePersistence {
+                api.getEpisode(withId: item)
+            }
         }
-        tableView.reloadData()
     }
-
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -58,7 +60,16 @@ class FavoritesViewController: UITableViewController {
         cell.episodeLbl.text = episodes[indexPath.row].title
         cell.favoriteVal.isSelected = true
         cell.delegate = self
+        if indexPath.row % 2 == 0 {
+            cell.backgroundColor = UIColor.lightGray
+        } else {
+            cell.backgroundColor = UIColor.white
+        }
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Favorites"
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -81,12 +92,11 @@ class FavoritesViewController: UITableViewController {
 
 extension FavoritesViewController: APIDelegate {
     func didReturnShow(show: ShowModel) {
-        
     }
     
     func didReturnSeason(season: SeasonModel) {
-
     }
+    
     func didReturnEpisode(episode: EpisodeModel) {
         episodes.append(episode)
         if(episodes.count == episodePersistence.count){
@@ -111,3 +121,5 @@ extension FavoritesViewController: FavoriteCellDelegate {
         tableView.reloadData()
     }
 }
+
+
