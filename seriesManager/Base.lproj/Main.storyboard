@@ -43,9 +43,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="381" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yb0-8z-bHl">
-                                            <rect key="frame" x="68" y="12" width="61.333333333333343" height="20.666666666666664"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yb0-8z-bHl">
+                                            <rect key="frame" x="68" y="14.999999999999998" width="240" height="14.33333333333333"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -62,17 +62,31 @@
                                                 <action selector="toggleFavorite:" destination="KYA-t0-8Nr" eventType="touchUpInside" id="1fg-Gp-2Zw"/>
                                             </connections>
                                         </button>
+                                        <view autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vog-FJ-fB0" customClass="StarRating" customModule="seriesManager" customModuleProvider="target">
+                                            <rect key="frame" x="318" y="7" width="56" height="30"/>
+                                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="56" id="IZ5-BM-BLt"/>
+                                                <constraint firstAttribute="height" constant="30" id="mSD-fb-Rtv"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="yb0-8z-bHl" firstAttribute="leading" secondItem="Vpn-wM-dmG" secondAttribute="leadingMargin" constant="60" id="F2r-QL-LTs"/>
                                         <constraint firstItem="1Bs-zh-SIw" firstAttribute="leading" secondItem="Vpn-wM-dmG" secondAttribute="leadingMargin" constant="5" id="Qhr-lZ-ezm"/>
+                                        <constraint firstItem="vog-FJ-fB0" firstAttribute="leading" secondItem="yb0-8z-bHl" secondAttribute="trailing" constant="10" id="cAH-h3-gfX"/>
                                         <constraint firstItem="yb0-8z-bHl" firstAttribute="centerY" secondItem="Vpn-wM-dmG" secondAttribute="centerY" id="qXd-S7-o9O"/>
                                         <constraint firstItem="1Bs-zh-SIw" firstAttribute="centerY" secondItem="Vpn-wM-dmG" secondAttribute="centerY" id="wXj-Ud-UM7"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="vog-FJ-fB0" secondAttribute="trailing" constant="40" id="5jN-fU-X62"/>
+                                    <constraint firstItem="vog-FJ-fB0" firstAttribute="centerY" secondItem="KYA-t0-8Nr" secondAttribute="centerY" id="7fx-72-srj"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="episodeLbl" destination="yb0-8z-bHl" id="qds-bo-wA0"/>
                                     <outlet property="favoriteBtn" destination="1Bs-zh-SIw" id="Kvy-wd-cgk"/>
+                                    <outlet property="starView" destination="vog-FJ-fB0" id="C4f-vu-b0I"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -89,7 +103,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vI4-AB-SFH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-434.765625" y="35.13909224011713"/>
+            <point key="canvasLocation" x="-434.78260869565219" y="35.054347826086961"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="XKO-fV-Zk2">
@@ -106,7 +120,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qs8-2i-3Lj">
                                 <rect key="frame" x="4" y="64" width="406" height="623"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Acd-Jy-aYU">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Acd-Jy-aYU">
                                         <rect key="frame" x="125.33333333333333" y="0.0" width="155.33333333333337" height="33.666666666666671"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <nil key="textColor"/>
@@ -199,7 +213,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdp-UQ-wbV">
-                                            <rect key="frame" x="59.999999999999993" y="12" width="61.333333333333321" height="20.666666666666664"/>
+                                            <rect key="frame" x="60" y="12" width="207" height="20.666666666666664"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -215,9 +229,20 @@
                                                 <action selector="toggleFavorite:" destination="HlV-QA-IUO" eventType="touchUpInside" id="3bH-cp-qJb"/>
                                             </connections>
                                         </button>
+                                        <view autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tb6-N0-FIP" customClass="StarRating" customModule="seriesManager" customModuleProvider="target">
+                                            <rect key="frame" x="277" y="7" width="56" height="30"/>
+                                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="56" id="yMX-n2-mr9"/>
+                                                <constraint firstAttribute="height" constant="30" id="zld-j2-r2D"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="RsG-Xw-Lly" firstAttribute="leading" secondItem="Wya-6y-a85" secondAttribute="leadingMargin" constant="5" id="46S-OZ-WvO"/>
+                                        <constraint firstItem="Tb6-N0-FIP" firstAttribute="centerY" secondItem="Wya-6y-a85" secondAttribute="centerY" id="HSd-rc-gVg"/>
+                                        <constraint firstItem="Tb6-N0-FIP" firstAttribute="leading" secondItem="tdp-UQ-wbV" secondAttribute="trailing" constant="10" id="Qr6-oo-ir6"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Tb6-N0-FIP" secondAttribute="trailing" constant="40" id="YRC-jt-RtV"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <accessibility key="accessibilityConfiguration" identifier="episodeCell"/>
@@ -229,6 +254,7 @@
                                 <connections>
                                     <outlet property="episodeLbl" destination="tdp-UQ-wbV" id="YJM-rd-oFU"/>
                                     <outlet property="favoriteVal" destination="RsG-Xw-Lly" id="pDb-8g-Czs"/>
+                                    <outlet property="starRating" destination="Tb6-N0-FIP" id="XEP-Rc-3gN"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

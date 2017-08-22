@@ -12,6 +12,7 @@ class SeasonCell: UITableViewCell {
     
     weak var delegate: SeasonCellDelegate?
 
+    @IBOutlet weak var starView: StarRating!
     @IBOutlet weak var episodeLbl: UILabel!
     @IBOutlet weak var favoriteBtn: UIButton!
     @IBAction func toggleFavorite(_ sender: UIButton) {

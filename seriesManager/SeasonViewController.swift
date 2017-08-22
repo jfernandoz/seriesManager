@@ -57,8 +57,11 @@ class SeasonViewController: UITableViewController {
             return UITableViewCell()
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "seasonCell", for: indexPath) as! SeasonCell
-        cell.episodeLbl.text = episode[APISettings.titleKey]
         cell.delegate = self
+        cell.episodeLbl.text = episode[APISettings.titleKey]
+        if let rating = episode[APISettings.imdbRatingKey], let floatRat = Float(rating){
+            cell.starView.setStarWith(rating: floatRat)
+        }
         if let episodeId = episode[APISettings.id], episodePersistence.contains(episodeId) {
             cell.favoriteBtn.isSelected = true
         } else {

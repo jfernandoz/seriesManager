@@ -57,9 +57,12 @@ class FavoritesViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "favoriteCell", for: indexPath) as! FavoriteCell
+        cell.delegate = self
         cell.episodeLbl.text = episodes[indexPath.row].title
         cell.favoriteVal.isSelected = true
-        cell.delegate = self
+        if let rating = episodes[indexPath.row].imdbrating {
+            cell.starRating.setStarWith(rating: Float(rating))
+        }
         if indexPath.row % 2 == 0 {
             cell.backgroundColor = UIColor.lightGray
         } else {
